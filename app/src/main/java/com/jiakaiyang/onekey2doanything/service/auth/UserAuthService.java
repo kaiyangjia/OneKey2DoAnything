@@ -1,7 +1,9 @@
 package com.jiakaiyang.onekey2doanything.service.auth;
 
 /**
- * Created by admin on 2016/4/21.
+ *
+ * 提供用户认证身份验证,登陆等服务
  */
 public class UserAuthService {
+
 }
