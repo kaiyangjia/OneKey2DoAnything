@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">OneKey2DoAnything</string>
     <string name="action_settings">Settings</string>
+
+
+    <string name="menu_filter">Filter</string>
+
+
+    <!-- common string -->
+    <string name="refresh">Refresh</string>
 </resources>
