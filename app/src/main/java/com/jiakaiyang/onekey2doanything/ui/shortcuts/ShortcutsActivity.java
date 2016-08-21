@@ -1,9 +1,10 @@
 package com.jiakaiyang.onekey2doanything.ui.shortcuts;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
@@ -13,10 +14,13 @@ import android.view.MenuItem;
 
 import com.jiakaiyang.onekey2doanything.R;
 import com.jiakaiyang.onekey2doanything.ui.base.BaseActivity;
+import com.jiakaiyang.onekey2doanything.ui.edit.EditActivity;
 import com.jiakaiyang.onekey2doanything.utils.ActivityUtils;
+import com.jiakaiyang.onekey2doanything.utils.Constants;
 
 public class ShortcutsActivity extends BaseActivity {
     private DrawerLayout mDrawerLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,12 @@ public class ShortcutsActivity extends BaseActivity {
             setupDrawerContent(navigationView);
         }
 
-        //Set up the fragment
+        initFragments();
+        initView();
+    }
+
+    private void initFragments(){
+        //Set up the content fragment
         ShortcutsFragment fragment = (ShortcutsFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.contentFrame);
         if(fragment == null){
@@ -46,13 +55,16 @@ public class ShortcutsActivity extends BaseActivity {
             ActivityUtils.addFragmentToActivity(getSupportFragmentManager()
                     , fragment, R.id.contentFrame);
         }
+    }
 
+    private void initView(){
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(ShortcutsActivity.this, EditActivity.class);
+                intent.putExtra(Constants.KEY_ACTIVITY_FLAG, EditActivity.ACTIVTY_FLAG_CREATE);
+                startActivity(intent);
             }
         });
     }
@@ -60,6 +72,7 @@ public class ShortcutsActivity extends BaseActivity {
     private void setupDrawerContent(NavigationView navigationView){
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,13 +83,12 @@ public class ShortcutsActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // Open the navigation drawer when the home icon is selected from the toolbar.
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

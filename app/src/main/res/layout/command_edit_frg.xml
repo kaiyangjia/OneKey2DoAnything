@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jky="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView
+        android:id="@+id/item_edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_setting_item_height"
+        jky:name="@string/call_name"
+        jky:name_percent="0.4"
+        jky:value_parent="0.7" >
+
+    </com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView>
+
+    <com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView
+        android:id="@+id/item_edit_desc"
+        android:layout_below="@id/item_edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_setting_item_height"
+        jky:name="@string/call_desc"
+        jky:name_percent="0.4"
+        jky:value_parent="0.7" >
+
+    </com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView>
+
+    <com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView
+        android:id="@+id/item_edit_number"
+        android:layout_below="@id/item_edit_desc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_setting_item_height"
+        jky:name="@string/call_number"
+        jky:name_percent="0.4"
+        jky:value_parent="0.7" >
+
+    </com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView>
+
+
+    <Button
+        android:id="@+id/btn_pre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/next_btn_margin"
+        android:layout_marginBottom="@dimen/next_btn_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/previous" />
+</RelativeLayout>

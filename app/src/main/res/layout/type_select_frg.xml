@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jky="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_page_title"
+        android:text="@string/command_type_select_title"
+        android:id="@+id/title" />
+
+    <com.jiakaiyang.onekey2doanything.ui.common.views.DynamicRadioGroup
+        android:id="@+id/radio_group"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/common_item_divider"
+        jky:items="@array/command_type_names"
+        jky:item_layout="@layout/common_radio_button">
+
+    </com.jiakaiyang.onekey2doanything.ui.common.views.DynamicRadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/next_btn_margin"
+        android:layout_marginBottom="@dimen/next_btn_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/next" />
+</RelativeLayout>

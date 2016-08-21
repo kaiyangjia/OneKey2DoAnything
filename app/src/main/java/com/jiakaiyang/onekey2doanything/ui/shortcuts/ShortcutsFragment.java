@@ -17,10 +17,8 @@ public class ShortcutsFragment extends BaseFragment{
         return new ShortcutsFragment();
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = LayoutInflater.from(getContext()).inflate(R.layout.shortcuts_frg, null);
-        return root;
+    public int getRootViewRes() {
+        return R.layout.shortcuts_frg;
     }
 }

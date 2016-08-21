@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:title="@string/call_name"
+        android:hint="@string/call_name_summary"
+        android:key="@string/sp_key_call_name"
+        android:summary="@string/call_name_summary" />
+
+    <EditTextPreference
+        android:title="@string/call_desc"
+        android:hint="@string/call_desc_summary"
+        android:key="@string/sp_key_call_desc"
+        android:summary="@string/call_desc_summary"/>
+
+    <EditTextPreference
+        android:title="@string/call_number"
+        android:hint="@string/call_number_summary"
+        android:key="@string/sp_key_call_number"
+        android:summary="@string/call_number_summary"
+        android:numeric="integer" />
+</PreferenceScreen>

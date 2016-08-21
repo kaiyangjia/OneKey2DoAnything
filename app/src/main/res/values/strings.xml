@@ -1,11 +1,39 @@
 <resources>
+    <!-- don't need to localization-->
+    <string name="sp_key_type_select">spKeyTypeSelect</string>
+    <string name="sp_key_call_name">spKeyCallName</string>
+    <string name="sp_key_call_desc">spKeyCallDesc</string>
+    <string name="sp_key_call_number">spKeyCallNumber</string>
+
+
+    <!-- need to localization -->
     <string name="app_name">OneKey2DoAnything</string>
     <string name="action_settings">Settings</string>
-
-
     <string name="menu_filter">Filter</string>
-
 
     <!-- common string -->
     <string name="refresh">Refresh</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    
+
+    <!-- command settings-->
+    <string name="command_type_name">Type</string>
+    <string name="command_type_summary">The type of the command</string>
+    <string name="command_type_select_title">Please select a type</string>
+    <string-array name="command_type_names">
+        <item>Call someone</item>
+        <item>Navi to somewhere</item>
+    </string-array>
+    <!-- don't need to localization-->
+    <string-array name="command_type_values">
+        <item>command_type_call</item>
+        <item>command_type_navi</item>
+    </string-array>
+    <string name="call_name">Name</string>
+    <string name="call_desc">Description</string>
+    <string name="call_number">Number</string>
+    <string name="call_name_summary">The name of the shortcut</string>
+    <string name="call_desc_summary">The description of the shortcut</string>
+    <string name="call_number_summary">The number you want to call</string>
 </resources>

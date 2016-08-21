@@ -9,11 +9,13 @@ import android.graphics.Bitmap;
 public class Shortcut {
     private String name;
 
-    private String describe;
-
     private Long version;
 
-    private Bitmap icon;
+    private Bitmap iconBitmap;
+
+    private int iconResId;
+
+    private String iconURL;
 
     private Intent intent;
 }

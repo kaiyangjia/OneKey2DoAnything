@@ -18,8 +18,6 @@ package com.jiakaiyang.onekey2doanything.ui.base;
 
 public interface BasePresenter {
 
-    void subscribe();
-
-    void unsubscribe();
+    void start();
 
 }

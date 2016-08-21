@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DynamicRadioGroup">
+        <attr name="items" format="reference"></attr>
+        <attr name="item_layout" format="reference"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="EditItemEditTextView">
+        <attr name="name" format="string"></attr>
+        <attr name="value" format="string"></attr>
+        <attr name="name_percent" format="float"></attr>
+        <attr name="value_parent" format="float"></attr>
+        <attr name="name_text_size" format="dimension"></attr>
+        <attr name="value_text_size" format="dimension"></attr>
+    </declare-styleable>
+</resources>
