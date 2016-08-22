@@ -1,6 +1,9 @@
 package com.jiakaiyang.onekey2doanything.ui.edit;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +14,9 @@ import com.jiakaiyang.onekey2doanything.R;
 import com.jiakaiyang.onekey2doanything.ui.base.BaseFragment;
 import com.jiakaiyang.onekey2doanything.ui.base.OnPageIndexClickListener;
 import com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView;
+import com.jiakaiyang.onekey2doanything.utils.MediaUtils;
 
+import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
@@ -32,6 +37,7 @@ public class EditCallFragment extends BaseFragment
     private Button btnDone;
 
     private EditText mNameValueView, mDescValueView, mNumberValueView;
+
 
 
     public static EditCallFragment newInstance(){

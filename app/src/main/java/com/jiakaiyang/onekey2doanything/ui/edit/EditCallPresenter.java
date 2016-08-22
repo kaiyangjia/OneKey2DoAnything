@@ -44,4 +44,19 @@ public class EditCallPresenter implements EditCallContract.Presenter{
                 , mEditCallView.getViewContext().getResources().getString(R.string.shortcut_create_success)
                 , Snackbar.LENGTH_LONG).show();
     }
+
+    @Override
+    public void setAvatar(Uri uri) {
+
+    }
+
+    @Override
+    public void openCamera() {
+        ((EditActivity)mEditCallView.getViewContext()).openCarema();
+    }
+
+    @Override
+    public void openGallery() {
+
+    }
 }

@@ -3,6 +3,7 @@
     package="com.jiakaiyang.onekey2doanything" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
@@ -22,12 +23,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <activity android:name=".ui.DemoActivity"/>
 
         <activity android:name=".ui.edit.EditActivity" >
         </activity>
+
     </application>
 
 </manifest>

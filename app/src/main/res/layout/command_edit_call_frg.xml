@@ -10,8 +10,31 @@
     android:orientation="vertical">
 
 
+    <RelativeLayout
+        android:id="@+id/avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:id="@+id/add_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_add_a_photo" />
+
+        <TextView
+            android:layout_below="@id/add_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_item_divider"
+            android:layout_marginBottom="@dimen/common_item_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/call_avatar" />
+    </RelativeLayout>
+
+
     <com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView
         android:id="@+id/item_edit_name"
+        android:layout_below="@id/avatar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/common_setting_item_height"
         jky:name="@string/call_name"

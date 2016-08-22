@@ -1,6 +1,7 @@
 package com.jiakaiyang.onekey2doanything.ui.edit;
 
 import android.content.Context;
+import android.net.Uri;
 
 import com.jiakaiyang.onekey2doanything.ui.base.BasePresenter;
 import com.jiakaiyang.onekey2doanything.ui.base.BaseView;
@@ -28,6 +29,12 @@ public interface EditCallContract {
 
 
     interface Presenter extends BasePresenter {
-        public  void createShortcut();
+        public void createShortcut();
+
+        public void setAvatar(Uri uri);
+
+        public void openCamera();
+
+        public void openGallery();
     }
 }

@@ -17,7 +17,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/drawer_menu_main"
+        android:title="@string/action_main"
+        android:checked="true"
+        android:icon="@drawable/ic_main" />
+
+    <item
         android:id="@+id/drawer_menu_setting"
         android:title="@string/action_settings"
         android:icon="@drawable/ic_settings" />
+
+    <item
+        android:id="@+id/drawer_menu_feedback"
+        android:title="@string/action_feedback"
+        android:icon="@drawable/ic_feedback" />
+
+    <item
+        android:id="@+id/drawer_menu_help"
+        android:title="@string/action_help"
+        android:icon="@drawable/ic_help" />
 </menu>

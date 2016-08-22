@@ -1,6 +1,9 @@
 package com.jiakaiyang.onekey2doanything.ui.edit;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -12,9 +15,12 @@ import com.jiakaiyang.onekey2doanything.ui.base.BaseActivity;
 import com.jiakaiyang.onekey2doanything.ui.base.CommonFragmentPagerAdapter;
 import com.jiakaiyang.onekey2doanything.ui.base.OnPageIndexClickListener;
 import com.jiakaiyang.onekey2doanything.ui.common.fragment.TypeSelectFragment;
+import com.jiakaiyang.onekey2doanything.utils.MediaUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
 
 /**
  * 编辑command的页面
@@ -31,6 +37,9 @@ public class EditActivity extends BaseActivity
     private CommonFragmentPagerAdapter mAdapter;
 
     private EditCallContract.Presenter mPresenter;
+
+    private Uri fileUri;
+    private final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE=100;
 
 
     @Override
@@ -99,5 +108,26 @@ public class EditActivity extends BaseActivity
                 mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1);
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK){
+            switch (requestCode){
+                case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE:
+                    mPresenter.setAvatar(fileUri);
+                    break;
+            }
+        }
+    }
+
+    public void openCarema(){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        fileUri = MediaUtils.getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+
+        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
     }
 }

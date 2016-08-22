@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- need to localization -->
     <string name="app_name">一键</string>
     <string name="action_settings">设置</string>
+    <string name="menu_filter">过滤</string>
+
+    <!-- common string -->
+    <string name="refresh">刷新</string>
+    <string name="next">下一步</string>
+    <string name="previous">前一步</string>
+    <string name="done">完成</string>
+
+    <!-- dialog message -->
+    <string name="name_cant_null">名字不能为空!</string>
+    <string name="number_cant_null">号码不能为空!</string>
+    <string name="shortcut_create_success">现在你可以在Home页面使用它啦!</string>
+
+    <!-- command settings-->
+    <string name="command_type_name">类型</string>
+    <string name="command_type_summary">命令的类型</string>
+    <string name="command_type_select_title">请选择一个类型</string>
+    <string-array name="command_type_names">
+        <item>打电话给某个人</item>
+    </string-array>
+
+    <string name="call_name">名称</string>
+    <string name="call_desc">描述(可选)</string>
+    <string name="call_number">电话</string>
+    <string name="call_name_summary">快捷方式显示的名称</string>
+    <string name="call_desc_summary">快捷方式的描述信息</string>
+    <string name="call_number_summary">你想要拨打的号码</string>
+    <string name="action_feedback">发送反馈</string>
+    <string name="action_help">帮助</string>
+    <string name="feedback_cant_null">反馈信息不能是空的</string>
+    <string name="feedback_email">你的邮箱</string>
+    <string name="feedback_success">我们已经收到了您的反馈。谢谢!</string>
+    <string name="feedback_title">关于这款app您有什么意见或者建议吗?可以在下面写下来发送给我们</string>
+    <string name="action_main">列表</string>
+    <string name="help_content_desc">在接下来的时间内,我们将会给app增加更多新的功能,敬请期待</string>
+    <string name="help_content_email">联系我们:kaiyangjia@163.com</string>
+    <string name="help_content_version">版本:1.0</string>
+    <string name="help_content_website">网站:jiakaiyang.com</string>
+    <string name="call_avatar">为该号码添加一个头像</string>
 </resources>
