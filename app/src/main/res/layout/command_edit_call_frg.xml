@@ -9,6 +9,7 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical">
 
+
     <com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView
         android:id="@+id/item_edit_name"
         android:layout_width="match_parent"
@@ -42,13 +43,25 @@
     </com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView>
 
 
+
+
     <Button
         android:id="@+id/btn_pre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/next_btn_margin"
+        android:layout_marginBottom="@dimen/next_btn_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/previous" />
+
+    <Button
+        android:id="@+id/btn_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/next_btn_margin"
         android:layout_marginBottom="@dimen/next_btn_margin"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:text="@string/previous" />
+        android:layout_alignParentRight="true"
+        android:text="@string/done" />
 </RelativeLayout>

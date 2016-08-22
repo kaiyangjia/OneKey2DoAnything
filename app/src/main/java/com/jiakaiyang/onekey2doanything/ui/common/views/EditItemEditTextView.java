@@ -85,4 +85,13 @@ public class EditItemEditTextView extends PercentRelativeLayout{
         mValueView.setLayoutParams(layoutParams);
         addView(mValueView);
     }
+
+
+    public TextView getmNameView() {
+        return mNameView;
+    }
+
+    public EditText getmValueView() {
+        return mValueView;
+    }
 }

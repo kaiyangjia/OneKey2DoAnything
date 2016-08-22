@@ -15,7 +15,12 @@
     <string name="refresh">Refresh</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    
+    <string name="done">Done</string>
+
+    <!-- dialog message -->
+    <string name="name_cant_null">The name can not be empty!</string>
+    <string name="number_cant_null">The number can not be empty!</string>
+    <string name="shortcut_create_success">Now you can check the home screen and enjoy it!</string>
 
     <!-- command settings-->
     <string name="command_type_name">Type</string>

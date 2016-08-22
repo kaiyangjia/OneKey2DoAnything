@@ -7,13 +7,11 @@ import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.google.thirdparty.publicsuffix.PublicSuffixPatterns;
 import com.jiakaiyang.onekey2doanything.R;
 import com.jiakaiyang.onekey2doanything.ui.base.BaseActivity;
 import com.jiakaiyang.onekey2doanything.ui.base.CommonFragmentPagerAdapter;
 import com.jiakaiyang.onekey2doanything.ui.base.OnPageIndexClickListener;
 import com.jiakaiyang.onekey2doanything.ui.common.fragment.TypeSelectFragment;
-import com.jiakaiyang.onekey2doanything.utils.ActivityUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +29,8 @@ public class EditActivity extends BaseActivity
 
     private ViewPager mViewPager;
     private CommonFragmentPagerAdapter mAdapter;
+
+    private EditCallContract.Presenter mPresenter;
 
 
     @Override
@@ -59,23 +59,26 @@ public class EditActivity extends BaseActivity
         List<Fragment> fragments = new ArrayList<>();
         TypeSelectFragment typeSelectFragment = null;
 
-        EditFragment editFragment = null;
+        EditCallFragment editFragment = null;
         switch (mActivityFlag){
             case ACTVITY_FLAG_EDIT:
-                editFragment = EditFragment.newInstance();
+                editFragment = EditCallFragment.newInstance();
                 fragments.add(editFragment);
                 break;
             case ACTIVTY_FLAG_CREATE:
             default:
                 typeSelectFragment = TypeSelectFragment.newInstance();
                 typeSelectFragment.setOnPageIndexClickListener(this);
-                editFragment = EditFragment.newInstance();
+                editFragment = EditCallFragment.newInstance();
                 editFragment.setOnPageIndexClickListener(this);
                 fragments.add(typeSelectFragment);
                 fragments.add(editFragment);
                 break;
         }
 
+        if(editFragment != null){
+            mPresenter = new EditCallPresenter(editFragment);
+        }
         mAdapter = new CommonFragmentPagerAdapter(getSupportFragmentManager(), fragments);
         mViewPager.setAdapter(mAdapter);
     }
@@ -83,7 +86,7 @@ public class EditActivity extends BaseActivity
     @Override
     public void onPreClick(String pageTag) {
         switch (pageTag){
-            case EditFragment.PAGE_TAG:
+            case EditCallFragment.PAGE_TAG:
                 mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1);
                 break;
         }
