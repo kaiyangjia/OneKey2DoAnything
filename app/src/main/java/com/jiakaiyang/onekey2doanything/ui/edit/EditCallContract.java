@@ -45,7 +45,7 @@ public interface EditCallContract {
 
         public void onGalleryButtonClicked();
 
-        public void createShortcut();
+        public void onBtnDoneClicked();
 
         public void setAvatar(Uri uri);
 

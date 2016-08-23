@@ -42,10 +42,14 @@ public class EditCallPresenter implements EditCallContract.Presenter{
 
     @Override
     public void onGalleryButtonClicked() {
-
+        ((EditActivity)mEditCallView.getViewContext()).openGallery();
     }
 
     @Override
+    public void onBtnDoneClicked() {
+        createShortcut();
+    }
+
     public void createShortcut() {
         String name = mEditCallView.getName();
         String number = mEditCallView.getNumber();

@@ -130,4 +130,8 @@ public class EditActivity extends BaseActivity
 
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
     }
+
+    public void openGallery(){
+
+    }
 }

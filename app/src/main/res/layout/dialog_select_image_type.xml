@@ -5,10 +5,12 @@
     android:orientation="vertical">
 
     <RadioGroup
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:id="@+id/radio_btn_camera"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/camera"/>
@@ -18,6 +20,7 @@
             android:layout_height="16dp" />
 
         <RadioButton
+            android:id="@+id/radio_btn_gallery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/gallery"/>

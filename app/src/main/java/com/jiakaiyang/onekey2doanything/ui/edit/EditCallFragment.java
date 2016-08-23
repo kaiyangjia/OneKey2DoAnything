@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 import com.google.common.base.Strings;
 import com.jiakaiyang.onekey2doanything.R;
@@ -29,7 +30,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 public class EditCallFragment extends BaseFragment
         implements EditCallContract.View
-        , View.OnClickListener{
+        , View.OnClickListener
+        , RadioGroup.OnCheckedChangeListener{
     public static final String PAGE_TAG = "EditPage";
 
     private OnPageIndexClickListener onPageIndexClickListener;
@@ -103,7 +105,7 @@ public class EditCallFragment extends BaseFragment
                 break;
             case R.id.btn_done:
                 if(checkInput()){
-                    mPresenter.createShortcut();
+                    mPresenter.onBtnDoneClicked();
                 }
                 break;
             case R.id.avatar:
@@ -183,6 +185,23 @@ public class EditCallFragment extends BaseFragment
     @Override
     public void openImageTypeSelectDialog() {
         ImageTypeSelectFragment fragment = ImageTypeSelectFragment.newInstance();
+        fragment.getRadioGroup().setOnCheckedChangeListener(this);
         fragment.show(getChildFragmentManager(), "imageSelect");
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (group.getId()){
+            case ImageTypeSelectFragment.radioGroupId:
+                switch (checkedId){
+                    case ImageTypeSelectFragment.radioButtonCameraId:
+                        mPresenter.onCameraButtonClicked();
+                        break;
+                    case ImageTypeSelectFragment.radioButtonGalleryId:
+                        mPresenter.onGalleryButtonClicked();
+                        break;
+                }
+                break;
+        }
     }
 }
