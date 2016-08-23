@@ -42,4 +42,6 @@
     <string name="help_content_version">版本:1.0</string>
     <string name="help_content_website">网站:jiakaiyang.com</string>
     <string name="call_avatar">为该号码添加一个头像</string>
+    <string name="camera">相机</string>
+    <string name="gallery">相册</string>
 </resources>

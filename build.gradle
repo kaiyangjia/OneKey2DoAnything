@@ -17,7 +17,14 @@ buildscript {
 
 allprojects {
     repositories {
+        //All sub-projects will now refer to the same 'libs' directory
+        flatDir {
+            dirs "$rootProject.projectDir/libs"
+        }
         jcenter()
+        maven {
+            url "http://mvn.leancloud.cn/nexus/content/repositories/releases"
+        }
     }
 }
 
@@ -27,7 +34,7 @@ task clean(type: Delete) {
 
 ext {
     // Sdk and tools
-    minSdkVersion = 11
+    minSdkVersion = 14
     targetSdkVersion = 22
     compileSdkVersion = 23
     buildToolsVersion = '23.0.2'

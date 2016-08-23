@@ -1,13 +1,17 @@
 package com.jiakaiyang.onekey2doanything.ui.edit;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 
 import com.jiakaiyang.onekey2doanything.R;
 import com.jiakaiyang.onekey2doanything.data.entity.Shortcut;
 import com.jiakaiyang.onekey2doanything.worker.shortcut.ShortcutWorker;
+
+import java.io.IOException;
 
 /**
  * Presenter of Edit Call
@@ -23,6 +27,21 @@ public class EditCallPresenter implements EditCallContract.Presenter{
 
     @Override
     public void start() {
+
+    }
+
+    @Override
+    public void onAvatarImageClicked() {
+        mEditCallView.openImageTypeSelectDialog();
+    }
+
+    @Override
+    public void onCameraButtonClicked() {
+        ((EditActivity)mEditCallView.getViewContext()).openCarema();
+    }
+
+    @Override
+    public void onGalleryButtonClicked() {
 
     }
 
@@ -47,16 +66,13 @@ public class EditCallPresenter implements EditCallContract.Presenter{
 
     @Override
     public void setAvatar(Uri uri) {
-
-    }
-
-    @Override
-    public void openCamera() {
-        ((EditActivity)mEditCallView.getViewContext()).openCarema();
-    }
-
-    @Override
-    public void openGallery() {
-
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                    mEditCallView.getViewContext().getContentResolver(), uri);
+            mEditCallView.setAvatarImage(bitmap);
+            mEditCallView.hideAvatarText();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

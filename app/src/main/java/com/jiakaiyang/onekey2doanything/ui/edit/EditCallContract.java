@@ -1,6 +1,7 @@
 package com.jiakaiyang.onekey2doanything.ui.edit;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 
 import com.jiakaiyang.onekey2doanything.ui.base.BasePresenter;
@@ -25,16 +26,28 @@ public interface EditCallContract {
         public void setDesc(String desc);
 
         public void setNumber(String number);
+
+        public void setAvatarImage(Bitmap avatarView);
+
+        public void hideAvatarText();
+
+        public void showAvatarText();
+
+        //打开选择从相机或者相册添加照片的dialog
+        public void openImageTypeSelectDialog();
     }
 
 
     interface Presenter extends BasePresenter {
+        public void onAvatarImageClicked();
+
+        public void onCameraButtonClicked();
+
+        public void onGalleryButtonClicked();
+
         public void createShortcut();
 
         public void setAvatar(Uri uri);
 
-        public void openCamera();
-
-        public void openGallery();
     }
 }

@@ -22,6 +22,7 @@
             android:src="@drawable/ic_add_a_photo" />
 
         <TextView
+            android:id="@+id/avatar_text"
             android:layout_below="@id/add_avatar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/common_item_divider"

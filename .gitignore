@@ -3,6 +3,8 @@
 .git
 .idea
 *.iml
+*.apk
+/app/src/main/assets/local.properties
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries

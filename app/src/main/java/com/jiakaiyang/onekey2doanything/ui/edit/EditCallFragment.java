@@ -2,17 +2,21 @@ package com.jiakaiyang.onekey2doanything.ui.edit;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.support.v4.app.FragmentTransaction;
 import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.common.base.Strings;
 import com.jiakaiyang.onekey2doanything.R;
 import com.jiakaiyang.onekey2doanything.ui.base.BaseFragment;
 import com.jiakaiyang.onekey2doanything.ui.base.OnPageIndexClickListener;
+import com.jiakaiyang.onekey2doanything.ui.common.fragment.ImageTypeSelectFragment;
 import com.jiakaiyang.onekey2doanything.ui.common.views.EditItemEditTextView;
 import com.jiakaiyang.onekey2doanything.utils.MediaUtils;
 
@@ -63,6 +67,8 @@ public class EditCallFragment extends BaseFragment
         mNameValueView = editItemEditTextViewName.getmValueView();
         mDescValueView = editItemEditTextViewDesc.getmValueView();
         mNumberValueView = editItemEditTextViewNumber.getmValueView();
+
+        rootView.findViewById(R.id.avatar).setOnClickListener(this);
     }
 
     @Override
@@ -99,6 +105,9 @@ public class EditCallFragment extends BaseFragment
                 if(checkInput()){
                     mPresenter.createShortcut();
                 }
+                break;
+            case R.id.avatar:
+                mPresenter.onAvatarImageClicked();
                 break;
         }
     }
@@ -156,4 +165,24 @@ public class EditCallFragment extends BaseFragment
 
     }
 
+    @Override
+    public void setAvatarImage(Bitmap avatarView) {
+        ((ImageView)rootView.findViewById(R.id.add_avatar)).setImageBitmap(avatarView);
+    }
+
+    @Override
+    public void hideAvatarText() {
+        rootView.findViewById(R.id.avatar_text).setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showAvatarText(){
+        rootView.findViewById(R.id.avatar_text).setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void openImageTypeSelectDialog() {
+        ImageTypeSelectFragment fragment = ImageTypeSelectFragment.newInstance();
+        fragment.show(getChildFragmentManager(), "imageSelect");
+    }
 }

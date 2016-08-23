@@ -19,6 +19,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="done">Done</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
 
     <!-- dialog message -->
     <string name="name_cant_null">The name can not be empty!</string>
